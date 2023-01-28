@@ -76,6 +76,7 @@ img{
 }
 
 .site-header-logo-link {
+    flex-shrink: 0;
     display: flex;
     text-decoration: none;
 }
@@ -114,6 +115,7 @@ img{
     line-height: normal;
     font-weight: bold;
     color: var(--text-color);
+    white-space: nowrap;
 }
 
 .sitenav-link:hover {
