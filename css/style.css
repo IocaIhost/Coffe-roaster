@@ -11,9 +11,10 @@
     --accent-light-brown-color-60: rgba(201, 155, 103, 0.6);
     --outline-color: var(--accent-green-color);
 
-
     --light-grey: #f8f8f2;
     --brown-bg: #c99b67;
+
+    --body-font-family: "Roboto", "Arial", sans-serif;
 }
 
 html{
@@ -42,9 +43,10 @@ body{
     margin: 0;
     font-size: 16px;
     line-height: 1.75;
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: var(--body-font-family);
     background-color: #fff;
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 img{
@@ -225,8 +227,19 @@ img{
     margin-bottom: 34px;
 }
 
+.hero-img-wrapper{
+    position: relative;
+}
+
+.hero-img-badge{
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-68px, -65px);
+}
 
 .hero-img {
+    display: block;
     width: 710px;
     height: 596px;
     object-fit: cover;
@@ -242,6 +255,7 @@ img{
     margin-bottom: 20px;
 }
 .index-collection-inner {
+    position: relative;
     padding: 50px 143px;
     background-color: var(--light-grey);
     background-image: url("../img/index-collection-bg.jpg");
@@ -308,6 +322,25 @@ img{
 
 .index-collection-text:not(:last-child) {
     margin-bottom: 10px;
+}
+
+.inner-index-collection-leaves-left {
+    position: absolute;
+    top: 40px;
+    left: -170px;
+
+}
+
+.inner-index-collection-leaves-right-mix {
+    position: absolute;
+    top: 742px;
+    right: -220px;
+}
+
+.inner-index-collection-leaves-left-light {
+    position: absolute;
+    bottom: 170px;
+    left: -216px;
 }
 
 
@@ -380,6 +413,7 @@ img{
 
 /* HOW IT WORKS */
 .how-it-works-inner {
+    position: relative;
     padding: 50px 30px;
     background-color: var( --accent-green-color);
     background-image: url("../img/how-it-works-bg.jpg");
@@ -409,6 +443,7 @@ img{
 }
 
 .how-it-works-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: calc(100% / 3 - 20);
@@ -417,6 +452,8 @@ img{
 }
 
 .how-it-works-item::before {
+    position: relative;
+    z-index: 2;
     content: '';
     width: 60px;
     height: 60px;
@@ -425,6 +462,16 @@ img{
     background-color: var(--light-grey);
 }
 
+.how-it-works-item:not(:last-child):after {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    width: 433px;
+    height: 3px;
+    background-image: url("../img/dashed-line.svg");
+    background-repeat: no-repeat;
+    content: "";
+}
 
 .how-it-works-info {
     display: flex;
@@ -462,6 +509,11 @@ img{
     outline-color: var(--accent-light-brown-color);
 }
 
+.how-it-works-sticker{
+    position: absolute;
+    right: 68px;
+    top: 41px;
+}
 
 /* SITE FOOTER */
 .site-footer {
